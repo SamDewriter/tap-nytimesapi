@@ -20,7 +20,6 @@ STREAM_TYPES = [
     nytimesAPIStream,
 ]
 
-
 class TapNyTimesAPI(Tap):
     """nytimesAPI tap class."""
     name = "tap-nytimesapi"
