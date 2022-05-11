@@ -20,7 +20,7 @@ STREAM_TYPES = [
     nytimesAPIStream,
 ]
 
-class TapNyTimesAPI(Tap):
+class TapnytimesAPI(Tap):
     """nytimesAPI tap class."""
     name = "tap-nytimesapi"
 
@@ -41,4 +41,4 @@ class TapNyTimesAPI(Tap):
         """Return a list of discovered streams."""
         return [stream_class(tap=self) for stream_class in STREAM_TYPES]
 
-cli = TapNyTimesAPI.cli
+cli = TapnytimesAPI.cli
