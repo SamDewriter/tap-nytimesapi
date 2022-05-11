@@ -2,7 +2,7 @@
 
 from pathlib import Path
 import os, sys
-sys.path.append(os.path.abspath(os.path.join('..')))
+# sys.path.append(os.path.abspath(os.path.join('..')))
 from typing import Iterable
 import requests
 
@@ -25,9 +25,10 @@ class nytimesAPIStream(RESTStream):
     records_jsonpath = "$[*]"  # Or override `parse_response`.
 
     def parse_response(self, response: requests.Response) -> Iterable[dict]:
-            """Parse the response and return an iterator of result rows."""
+        
+        """Parse the response and return an iterator of result rows."""
             
-            query_url = self.url_base()
-            r = requests.get(query_url)
+        query_url = self.url_base()
+        r = requests.get(query_url)
             
-            yield from extract_jsonpath(self.records_jsonpath, input=r.json())
+        yield from extract_jsonpath(self.records_jsonpath, input=r.json())
