@@ -1,6 +1,8 @@
 """Stream type classes for tap-nytimesapi."""
 
 from pathlib import Path
+import os, sys
+sys.path.append(os.path.abspath(os.path.join('..')))
 from typing import Iterable
 import requests
 
