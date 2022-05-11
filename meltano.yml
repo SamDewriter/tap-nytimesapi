@@ -1,0 +1,25 @@
+version: 1
+send_anonymous_usage_stats: true
+project_id: 977b408e-3cea-48cc-8530-899c9c57941c
+plugins:
+  extractors:
+  - name: tap-nytimesapi
+    namespace: tap_nytimesapi
+    pip_url: -e .
+    capabilities:
+    - state
+    - catalog
+    - discover
+    settings:
+    - name: username
+    - name: password
+      kind: password
+    - name: start_date
+      value: '2010-01-01T00:00:00Z'
+    config:
+      username: mubbysani@gmail.com
+      start_date: '2022-10-10'
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
